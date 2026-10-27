@@ -49,14 +49,12 @@ body {
   border-bottom: 1px solid #8f8993;
 }
 
-.navigation span {
-  white-space: nowrap;
-}
-
+/* Bolded the current page */
 .navigation-selected {
     font-weight: 700;
 }
 
+/* Remove underline for href */
 .navigation a,
 .navigation a:visited,
 .navigation a:hover,
@@ -65,11 +63,12 @@ body {
   text-decoration: none;
 }
 
-/* INTRODUCTION */
+/* INDEX */
 .intro {
   margin-top: 24px;
 }
 
+/* Hi, I'm Veronica header */
 h1 {
   color: var(--purple-dark);
   font-family: 'PT Serif', serif;
@@ -80,6 +79,7 @@ h1 {
   letter-spacing: -1.5px;
 }
 
+/* Intro */
 .intro-content {
   display: flex;
   align-items: center;
@@ -94,43 +94,34 @@ h1 {
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
+  width: clamp(200px, 35%, 300px);
 }
 
 .bio {
   padding-top: 10px;
-  font-size: 15.5px;
   line-height: 1.34;
+  font-size: clamp(12px, 1.2vw, 15.5px);
 }
 
 .bio p {
   margin: 0 0 17px;
 }
 
+/* First bolded line in the intro */
 .bio .bio-bold {
   font-family: 'PT Serif', serif;
   font-weight: 700;
-  font-size: 17px;
   line-height: 1.25;
   margin-bottom: 18px;
+  font-size: clamp(14px, 1.2vw, 17px);
 }
 
+/* For emphasis */
 .purple-text {
   color: var(--purple-medium);
 }
 
-.arrow {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.section-list a {
-  text-decoration: none;
-}
-
-.section-list a:hover {
-  text-decoration: none;
-}
-
+/* Icons for LinkedIn, Google Scholar, etc */
 .social-links {
   display: flex;
   align-items: center;
@@ -145,26 +136,7 @@ h1 {
   transition: color 0.2s ease;
 }
 
-.social-links a:hover {
-  color: var(--purple);
-}
-
-
-/* SECTIONS */
-
-.small-heading {
-  text-align: center;
-  color: var(--purple-dark);
-  font-family: 'PT Serif', serif;
-  font-variant: small-caps;
-  letter-spacing: 1px;
-}
-
-h2 {
-  color: var(--purple-dark);
-  font-family: 'PT Serif', serif;
-  font-weight: 700;
-}
+/* Sections (i.e., News, Publications, Community) */
 
 .content-section {
   margin: 38px 38px 0 10px;
@@ -178,6 +150,9 @@ h2 {
 }
 
 .section-heading h2 {
+  color: var(--purple-dark);
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
   flex: 0 0 auto;
   margin: 0;
   font-size: 27px;
@@ -191,6 +166,7 @@ h2 {
   transform: translateY(2px);
 }
 
+/* List of items in each section */
 .section-list {
   list-style: none;
   margin: 22px 0 0;
@@ -199,21 +175,43 @@ h2 {
 
 .section-list li {
   margin: 0 0 15px;
-  font-size: 15px;
+  font-size: clamp(12px, 1.2vw, 15.5px);
 }
 
+/* Remove underline for href */
+.section-list-no-underline {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0 0 0 35px;
+}
+
+.section-list-no-underline li {
+  margin: 0 0 15px;
+  font-size: clamp(12px, 1.2vw, 15.5px);
+}
+
+.section-list-no-underline a {
+  text-decoration: none;
+}
+
+.section-list-no-underline a:hover {
+  text-decoration: none;
+}
+
+/* Expand for more */
 .section-list-expand {
   margin-top: 12px;
   text-align: left;
 }
 
+/* See more text */
 .section-list-expand summary {
   display: inline-block;
   cursor: pointer;
-  font-size: 14px;
   font-style: italic;
   color: inherit;
   list-style: none;
+  font-size: clamp(11px, 1.2vw, 14px);
 }
 
 .section-list-expand summary::-webkit-details-marker {
@@ -234,16 +232,31 @@ h2 {
   text-align: left;
 }
 
+/* To open another link in Community section */
+.arrow {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 /* COMMUNITY */
 
-/* Each workshop */
+/* Small heading at the top */
+.small-heading {
+  text-align: center;
+  color: var(--purple-dark);
+  font-family: 'PT Serif', serif;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+}
+
+/* Entire panel for each event */
 .event-panel {
   border: 5px solid var(--purple-dark);
   margin: 15px 70px;
   background: white;
 }
 
-/* Purple title area */
+/* Main title area */
 .panel-header {
   background: var(--purple-extra-light);
   color: var(--purple-dark);
@@ -255,6 +268,7 @@ h2 {
   min-height: 250px;
 }
 
+/* Main title area, expandable version */
 .panel-header-clickable {
   background: var(--purple-dark);
   color: white;
@@ -268,6 +282,7 @@ h2 {
   cursor: pointer;
 }
 
+/* event-title-1 and -2 are for every other event (alternating designs) */
 .event-title-1 h1 {
   font-family: "PT Serif", Georgia, serif;
   font-size: 60px;
@@ -319,8 +334,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-
-/* Workshop details: scroll vertically */
+/* More details (individual workshops) */
 .individual-event-content {
   max-height: 360px;
   overflow-y: auto;
@@ -353,14 +367,16 @@ h2 {
   font-family: "PT Serif", Georgia, serif;
   font-size: 16px;
   line-height: 1.3;
+  font-weight: 400;
 }
 
 .individual-event-description h2 {
-  font-weight: 400;
+  color: var(--purple-dark);
 }
 
 /* PERSONAL */
 
+/* Longer description */
 .description {
     max-width: 600px;
     margin: 0 auto 35px;
@@ -369,11 +385,11 @@ h2 {
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  max-width: 750px; /* Makes the whole grid smaller */
-  margin: 0 auto;   /* Centers the grid */
+  max-width: 750px;
+  margin: 0 auto;  
 }
 
-/* Flip card */
+/* Each card */
 .flip-card {
   background: transparent;
   aspect-ratio: 4 / 4;
@@ -388,7 +404,7 @@ h2 {
   transform-style: preserve-3d;
 }
 
-/* Flip on hover for desktop */
+/* Flip on hover */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
@@ -404,7 +420,7 @@ h2 {
   overflow: hidden;
 }
 
-/* Front image */
+/* Image on the front */
 .flip-card-front img {
   width: 100%;
   height: 100%;
@@ -412,7 +428,7 @@ h2 {
   display: block;
 }
 
-/* Caption side */
+/* Text on the back */
 .flip-card-back {
   background: var(--purple-dark);
   color: white;
@@ -433,61 +449,21 @@ h2 {
   margin: 0;
 }
 
-
-
-@media (max-width: 600px) {
-  body {
-    padding: 12px;
-  }
-
-  .event-panel {
-    margin-bottom: 20px;
-  }
-
-  .panel-header {
-    min-height: 170px;
-  }
-
-  .panel-header h1,
-  .panel-header h2 {
-    font-size: clamp(29px, 7vw, 44px);
-    line-height: 1.25;
-  }
-
-  .workshop-content {
-    max-height: 320px;
-    padding: 20px 15px;
-  }
-
-  .workshop-item {
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .workshop-item img {
-    width: 95px;
-    height: 95px;
-  }
-
-  .workshop-description h3,
-  .workshop-description p {
-    font-size: 14px;
-  }
-}
-
-
+/* INDEX PAGE */
 @media (max-width: 700px) {
   .page {
     width: min(100% - 36px, 560px);
     padding-top: 24px;
   }
 
+  /* Navigation */
   .navigation {
     gap: 0;
     justify-content: space-around;
     font-size: 15px;
   }
 
+  /* Introduction */
   .intro {
     margin-top: 24px;
   }
@@ -497,35 +473,6 @@ h2 {
     letter-spacing: -1px;
   }
 
-  .intro-content {
-    grid-template-columns: 135px minmax(0, 1fr);
-    gap: 20px;
-    padding: 0;
-  }
-
-  .bio {
-    padding-top: 0;
-    font-size: 14px;
-  }
-
-  .bio .bio-lead {
-    font-size: 15px;
-  }
-
-  .content-section {
-    margin: 56px 0 0;
-  }
-
-  .section-heading h2 {
-    font-size: 25px;
-  }
-
-  .list {
-    padding-left: 18px;
-  }
-}
-
-@media (max-width: 460px) {
   .intro-content {
     flex-direction: column;
     align-items: center;
@@ -543,16 +490,36 @@ h2 {
     font-size: 15px;
   }
 
+  .bio .bio-lead {
+    font-size: 15px;
+  }
+
+  /* Sections */
+  .content-section {
+    margin: 56px 0 0;
+  }
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
   .see-more {
     padding-right: 4%;
   }
 }
 
-/* MOBILE WORKSHOP LAYOUT */
-@media (max-width: 600px) {
+/* COMMUNITY PAGE */
+@media (max-width: 1000px) {
+  /* General spacing */
+  body {
+    padding: 12px;
+  }
 
+  /* COMMUNITY */
+  /* Event panels */
   .event-panel {
     margin: 15px 12px;
+    margin-bottom: 20px;
     border-width: 3px;
   }
 
@@ -567,9 +534,16 @@ h2 {
     min-height: 0;
   }
 
-  /* Activity title */
+  .panel-header h1,
+  .panel-header h2 {
+    font-size: clamp(29px, 7vw, 44px);
+    line-height: 1.25;
+  }
+
+  /* Event titles */
   .event-title-1,
   .event-title-2 {
+    position: relative;
     width: 100%;
     text-align: center;
   }
@@ -585,12 +559,7 @@ h2 {
     border: none;
   }
 
-  /* White horizontal divider */
-  .event-title-2,
-  .event-title-1 {
-    position: relative;
-  }
-
+  /* Event details */
   .event-details-1,
   .event-details-2 {
     order: 2;
@@ -607,25 +576,10 @@ h2 {
     margin-bottom: 10px;
   }
 
-  /* Workshop listings */
+  /* Individual workshops */
   .individual-event-content {
     padding: 18px;
-    max-height: 360px;
-  }
-
-  .individual-event-item {
-    gap: 14px;
-    align-items: flex-start;
-  }
-
-  .individual-event-item img {
-    width: 95px;
-    height: 95px;
-  }
-
-  .individual-event-description h2,
-  .individual-event-description p {
-    font-size: 14px;
+    max-height: 320px;
   }
 
   .individual-event-item {
@@ -633,6 +587,7 @@ h2 {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+    margin-bottom: 27px;
   }
 
   .individual-event-item img {
@@ -644,9 +599,13 @@ h2 {
   .individual-event-description {
     width: 100%;
   }
-}
 
-@media (max-width: 600px) {
+  .individual-event-description h2,
+  .individual-event-description p {
+    font-size: 14px;
+  }
+
+  /* Image grid captions */
   .flip-card-back {
     padding: 8px;
   }
@@ -656,3 +615,4 @@ h2 {
     line-height: 1.3;
   }
 }
+
