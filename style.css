@@ -119,6 +119,7 @@ h1 {
 /* For emphasis */
 .purple-text {
   color: var(--purple-medium);
+  font-weight: 700;
 }
 
 /* Icons for LinkedIn, Google Scholar, etc */
